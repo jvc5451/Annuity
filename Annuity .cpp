@@ -6,8 +6,8 @@ int main(){
 	string type; 
 	while(type != "quit"){
 	cout<<"Discrete or Continous? ";
-	getline(cin, type); 
-	if(type =="Discrete"){
+	tolower(getline(cin, type)); 
+	if(type =="discrete"){
 		string type1; 
 		while(type1 !="quit"){
 			
@@ -18,7 +18,12 @@ int main(){
 				double interest;
 				cout<<"Interest rate: ";
 				cin>>interest;
-				interest= interest/100;
+				if(interest > 1){
+					interest= interest/100;
+				}
+				else{
+					interest = interest;
+				}
 				int age;
 				cout<<"Age at start of annuity: ";
 				cin>>age;
@@ -27,6 +32,7 @@ int main(){
 				cin>>years; 
 				double v;
 				v = pow(1 + interest, years + 1); 
+				cout<<"V is "<<v<<endl;
 				double tpx;
 				
 				
@@ -43,7 +49,7 @@ int main(){
 				cout<<"Length of annuity: ";
 				cin>>years; 
 			}
-			else if(type1 =="Term"){
+			else if(type1 =="term"){
 				double interest;
 				cout<<"Interest rate: ";
 				cin>>interest;
@@ -55,7 +61,7 @@ int main(){
 				cout<<"Length of annuity: ";
 				cin>>years; 
 			}
-			else if(type1 =="Pure Endowment"){
+			else if(type1 =="pure endowment"){
 				double interest;
 				cout<<"Interest rate: ";
 				cin>>interest;
@@ -67,7 +73,7 @@ int main(){
 				cout<<"Length of annuity: ";
 				cin>>years; 
 			}
-			else if(type1 =="Endowment"){
+			else if(type1 =="endowment"){
 				double interest;
 				cout<<"Interest rate: ";
 				cin>>interest;
@@ -82,7 +88,7 @@ int main(){
 			else if(type1 =="quit"){
 			}
 			else{
-				cout<<"Unrecognized command"<<endl; 
+				cout<<"Unrecognized Command"<<endl; 
 			}
 		}
 	}
